@@ -1,0 +1,26 @@
+1. starting joystick activates roscore
+2. rosrun rosserial_python serial_node.py
+3. rosrun  insta_camera  insta_camera_server
+
+( sudo chmod -R o+rw /dev/bus/usb )
+
+4. /thorvald_ws/src/vpheno_srv/scripts/take_picture_one.py
+
+
+from pynput.mouse import Listener
+import logging
+import inputs
+from inputs import devices
+    
+print(devices.gamepads)
+
+from inputs import get_gamepad
+
+while True: 
+    events = get_gamepad()
+    for event in events:
+#        print(event.ev_type, event.code, event.state  )
+        if event.code in ['ABS_Z','ABS_RZ','BTN_TL','BTN_TR'] \
+        and event.state == 0:
+            print('call trigger here')
+
