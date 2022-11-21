@@ -15,6 +15,7 @@ def takePicture():
 		photo=rospy.ServiceProxy("shutter_trigger",Trigger)
 		photo_insta=rospy.ServiceProxy("TriggerInsta", TriggerInsta)
 		print ("Picture taken!!!!Inside takePicture function!!!!!!!!!!!!!!")
+		# TODO use, logging...
 	except rospy.ServiceException, e:
 		print e
 
