@@ -22,7 +22,8 @@ def takePicture():
 if __name__=="__main__":
 from inputs import get_gamepad
 # TODO start time here
-while True: 
+event_code = ' '
+while True:  # TODO, replace True with time logic or event.code value
     # TODO time now here
     # if time now - start time , more than 1 hour then break from while loop
     events = get_gamepad()
