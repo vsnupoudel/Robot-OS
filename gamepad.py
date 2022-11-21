@@ -20,12 +20,19 @@ def takePicture():
 
 if __name__=="__main__":
 from inputs import get_gamepad
+# TODO start time here
 while True: 
+    # TODO time now here
+    # if time now - start time , more than 1 hour then break from while loop
     events = get_gamepad()
     for event in events:
 #        print(event.ev_type, event.code, event.state  )
         if event.code in ['ABS_Z','ABS_RZ','BTN_TL','BTN_TR'] and event.state == 0:
             print('call trigger here')
             takePicture()
+		
+	# TODO
+	# elif event.code in ['','']:
+        #    break
 		    
 		
